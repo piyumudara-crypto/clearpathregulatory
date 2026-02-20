@@ -1,201 +1,92 @@
+
 :root{
-  --bg:#0b1220;
-  --surface:#0f172a;
-  --card:#111c33;
-  --soft:#0f203b;
-  --ink:#e5e7eb;
-  --muted:#a7b0c0;
-  --line:rgba(226,232,240,.12);
-
-  /* Logo-aligned accents (teal + deep blue) */
-  --brand:#30b0b0;
-  --brand2:#105080;
-
-  --shadow:0 10px 30px rgba(0,0,0,.25);
-  --radius:18px;
-  --max:1120px;
+  --bg:#071a2f;
+  --surface:#0d243f;
+  --card:#112f52;
+  --brand:#1fa3ff;
+  --brand-soft:#163b63;
+  --text:#e6f0ff;
+  --muted:#9db8d6;
+  --radius:14px;
+  --max:1100px;
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:
-    radial-gradient(1200px 700px at 20% -10%, rgba(48,176,176,.25), transparent 55%),
-    radial-gradient(1000px 600px at 100% 0%, rgba(16,80,128,.22), transparent 55%),
-    linear-gradient(180deg, var(--bg), #060a12);
-  color:var(--ink);
-  line-height:1.65;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,#061423,#0a1f36);
+  color:var(--text);
+  line-height:1.6;
 }
 
-a{color:var(--brand); text-decoration:none}
-a:hover{text-decoration:underline}
-
-.container{max-width:var(--max); margin:0 auto; padding:0 18px}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
 .section{padding:70px 0}
-.section.compact{padding:44px 0}
-.kicker{color:var(--muted); font-size:.95rem}
 
-.header{
-  position:sticky; top:0; z-index:10;
-  background:rgba(8,12,20,.75);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--line);
+header{
+  background:rgba(7,26,47,.9);
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
+
 .nav{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 0;
-  gap:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
 }
-.brand{
-  display:flex; align-items:center; gap:12px;
-  min-width:240px;
-}
-.brand img{width:44px; height:44px; border-radius:12px; box-shadow: var(--shadow)}
-.brand .title{font-weight:700; letter-spacing:.2px}
-.brand .tag{font-size:.85rem; color:var(--muted); margin-top:2px}
-.brand .text{display:flex; flex-direction:column; line-height:1.2}
 
-.menu{
-  display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end;
+.nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:500;
 }
-.menu a{
-  color:var(--ink);
-  font-size:.95rem;
-  opacity:.9;
-  padding:8px 10px;
-  border-radius:999px;
-}
-.menu a:hover{background:rgba(255,255,255,.06); text-decoration:none}
-.menu a.active{background:rgba(48,176,176,.14); border:1px solid rgba(48,176,176,.25)}
 
 .hero{
-  padding:54px 0 10px;
+  padding:90px 0 60px;
 }
-.hero h1{
-  font-size: clamp(30px, 4vw, 46px);
-  line-height:1.15;
-  margin:10px 0 12px;
-  letter-spacing:-.3px;
-}
-.hero p{
-  max-width:680px;
-  margin:0 0 22px;
-  color:var(--muted);
-  font-size:1.1rem;
-}
-.actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
 
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:12px 16px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
-  color:var(--ink);
-  font-weight:600;
-  box-shadow: none;
-}
-.btn:hover{background:rgba(255,255,255,.07); text-decoration:none}
-.btn.primary{
-  background:linear-gradient(135deg, rgba(48,176,176,.95), rgba(16,80,128,.95));
-  border:1px solid rgba(48,176,176,.25);
-}
-.btn.primary:hover{filter:brightness(1.05)}
-
-.grid{
-  display:grid;
-  gap:16px;
-}
-.grid.three{grid-template-columns: repeat(3, minmax(0, 1fr))}
-.grid.two{grid-template-columns: repeat(2, minmax(0, 1fr))}
-@media (max-width: 920px){
-  .grid.three{grid-template-columns:1fr}
-  .grid.two{grid-template-columns:1fr}
-  .menu{justify-content:flex-start}
-  .brand{min-width:unset}
-}
+h1{font-size:40px;margin:0 0 20px}
+h2{margin-bottom:16px}
+p{color:var(--muted)}
 
 .card{
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  border:1px solid var(--line);
+  background:var(--card);
+  padding:24px;
   border-radius:var(--radius);
-  box-shadow: var(--shadow);
-  padding:18px;
-}
-.card h3{margin:0 0 6px; font-size:1.05rem}
-.card p{margin:0; color:var(--muted)}
-
-.hr{
-  height:1px; background:var(--line);
-  margin:26px 0;
+  margin-bottom:20px;
 }
 
-.clean-list{margin:10px 0 0; padding-left:18px}
-.clean-list li{margin:8px 0; color:var(--ink)}
-.clean-list li span{color:var(--muted)}
-
-.page-title{
-  font-size: clamp(28px, 3.5vw, 40px);
-  margin:0 0 10px;
-  letter-spacing:-.2px;
+footer{
+  background:#061423;
+  padding:50px 0;
+  border-top:1px solid rgba(255,255,255,.06);
 }
-.lead{color:var(--muted); max-width:780px; margin:0 0 18px}
 
-.footer{
-  padding:26px 0;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  font-size:.95rem;
-}
-.footer .cols{
+.footer-grid{
   display:grid;
-  grid-template-columns: 1.4fr .9fr .9fr;
-  gap:16px;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:30px;
 }
-.footer a{color:var(--muted)}
-.footer a:hover{color:var(--ink); text-decoration:none}
-@media(max-width:920px){ .footer .cols{grid-template-columns:1fr} }
 
-.notice{
-  padding:14px 16px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  color:var(--muted);
-}
-.small{font-size:.92rem; color:var(--muted)}
-
-
-/* footer enhancements */
-.footer .brandline{
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-.footer .logo{
-  border-radius:12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
-.footer .pillrow{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.footer a.pill{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  color: var(--ink);
+.footer-title{
   font-weight:600;
-  font-size:14px;
+  margin-bottom:12px;
 }
-.footer a.pill:hover{
-  background: rgba(255,255,255,.06);
+
+.button{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:30px;
+  background:var(--brand-soft);
+  color:var(--text);
   text-decoration:none;
+  margin-right:10px;
+  margin-top:10px;
+  border:1px solid rgba(255,255,255,.08);
 }
+
+.small{font-size:14px;color:var(--muted)}
